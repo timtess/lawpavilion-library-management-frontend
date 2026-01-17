@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lawpavilion.controller.BookController"
+      spacing="10" padding="10">
+
+    <!-- Form -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Author:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="authorField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="ISBN:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="isbnField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Published Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="publishedDateField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox spacing="10">
+        <Button text="Add" onAction="#handleAdd"/>
+        <Button text="Update" onAction="#handleUpdate"/>
+        <Button text="Delete" onAction="#handleDelete"/>
+        <Button text="Refresh" onAction="#handleRefresh"/>
+    </HBox>
+
+    <!-- Table -->
+    <TableView fx:id="bookTable" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="titleColumn" text="Title"/>
+            <TableColumn fx:id="authorColumn" text="Author"/>
+            <TableColumn fx:id="isbnColumn" text="ISBN"/>
+            <TableColumn fx:id="publishedDateColumn" text="Published Date"/>
+        </columns>
+    </TableView>
+</VBox>
